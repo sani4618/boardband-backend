@@ -84,7 +84,7 @@ DATABASES = {
      'default': {
 'ENGINE': 'djongo',
 "CLIENT": {
-"name": "fitness_db",
+"name": "broadband_db",
 "host": "mongodb+srv://josephsanijoseph:josephsanijoseph@cluster0.4fcbux8.mongodb.net/?retryWrites=true&w=majority",
 "username": "josephsanijoseph",
 "password": "josephsanijoseph",
