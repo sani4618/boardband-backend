@@ -26,6 +26,9 @@ SECRET_KEY = 'django-insecure-_9v!dzg1x8bd@3a=a_twwplo%=^tj^m4k7ct7y&lvitiv1&e3)
 DEBUG = True
 
 ALLOWED_HOSTS = []
+CORS_ORIGIN_WHITELIST=(
+    'http://localhost:4200',
+)
 
 
 # Application definition
@@ -37,9 +40,13 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    "corsheaders",
+    "rest_framework",
+    "broadbandapp"
 ]
 
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -74,11 +81,18 @@ WSGI_APPLICATION = 'broadband_backend.wsgi.application'
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
+     'default': {
+'ENGINE': 'djongo',
+"CLIENT": {
+"name": "fitness_db",
+"host": "mongodb+srv://josephsanijoseph:josephsanijoseph@cluster0.4fcbux8.mongodb.net/?retryWrites=true&w=majority",
+"username": "josephsanijoseph",
+"password": "josephsanijoseph",
+"authMechanism": "SCRAM-SHA-1",
+},
+ }
 }
+
 
 
 # Password validation
@@ -110,6 +124,8 @@ TIME_ZONE = 'UTC'
 USE_I18N = True
 
 USE_TZ = True
+
+CORS_ORIGIN_ALLOW_ALL=True
 
 
 # Static files (CSS, JavaScript, Images)
