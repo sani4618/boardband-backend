@@ -12,3 +12,4 @@ class BroadbandAppModel(models.Model):
      address=models.CharField(default="",max_length=50)
      pincode=models.CharField(default="",max_length=50)
      ntwid=models.CharField(default="",max_length=50)
+     
