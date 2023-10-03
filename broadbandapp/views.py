@@ -7,6 +7,16 @@ from broadbandapp.models import BroadbandAppModel
 from django.db.models import Q
 
 # customerid:"",customerName:"",broadbandplan:"",mobileNo:"",subDate:"",NxtSubDate:"",amount:"",address:"",pincode:"",ntwid:""
+
+@csrf_exempt
+def DeleteDetails(request):
+    if request.method=="POST":
+        recieved_json_data=json.loads(request.body)
+        getcustomerid=recieved_json_data["customerid"]
+        
+
+
+
 @csrf_exempt
 def SearchDetails(request):
     if request.method=="POST":
